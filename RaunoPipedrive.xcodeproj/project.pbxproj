@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		27C70C9E2A12219500BD44D2 /* RaunoPipedriveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70C9D2A12219500BD44D2 /* RaunoPipedriveApp.swift */; };
-		27C70CA02A12219500BD44D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70C9F2A12219500BD44D2 /* ContentView.swift */; };
+		27C70CA02A12219500BD44D2 /* PersonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70C9F2A12219500BD44D2 /* PersonListView.swift */; };
 		27C70CA22A12219600BD44D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27C70CA12A12219600BD44D2 /* Assets.xcassets */; };
 		27C70CA52A12219600BD44D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27C70CA42A12219600BD44D2 /* Preview Assets.xcassets */; };
 		27C70CAF2A12219600BD44D2 /* RaunoPipedriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CAE2A12219600BD44D2 /* RaunoPipedriveTests.swift */; };
 		27C70CB92A12219600BD44D2 /* RaunoPipedriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CB82A12219600BD44D2 /* RaunoPipedriveUITests.swift */; };
 		27C70CBB2A12219600BD44D2 /* RaunoPipedriveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CBA2A12219600BD44D2 /* RaunoPipedriveUITestsLaunchTests.swift */; };
+		27C70CC82A1223AD00BD44D2 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CC72A1223AD00BD44D2 /* Responses.swift */; };
+		27C70CCA2A12245C00BD44D2 /* RaunoPipedriveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CC92A12245C00BD44D2 /* RaunoPipedriveViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		27C70C9A2A12219500BD44D2 /* RaunoPipedrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaunoPipedrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C70C9D2A12219500BD44D2 /* RaunoPipedriveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaunoPipedriveApp.swift; sourceTree = "<group>"; };
-		27C70C9F2A12219500BD44D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		27C70C9F2A12219500BD44D2 /* PersonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListView.swift; sourceTree = "<group>"; };
 		27C70CA12A12219600BD44D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27C70CA42A12219600BD44D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		27C70CAA2A12219600BD44D2 /* RaunoPipedriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaunoPipedriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +46,8 @@
 		27C70CB42A12219600BD44D2 /* RaunoPipedriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaunoPipedriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C70CB82A12219600BD44D2 /* RaunoPipedriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaunoPipedriveUITests.swift; sourceTree = "<group>"; };
 		27C70CBA2A12219600BD44D2 /* RaunoPipedriveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaunoPipedriveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		27C70CC72A1223AD00BD44D2 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
+		27C70CC92A12245C00BD44D2 /* RaunoPipedriveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaunoPipedriveViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +99,11 @@
 			isa = PBXGroup;
 			children = (
 				27C70C9D2A12219500BD44D2 /* RaunoPipedriveApp.swift */,
-				27C70C9F2A12219500BD44D2 /* ContentView.swift */,
+				27C70C9F2A12219500BD44D2 /* PersonListView.swift */,
 				27C70CA12A12219600BD44D2 /* Assets.xcassets */,
 				27C70CA32A12219600BD44D2 /* Preview Content */,
+				27C70CC72A1223AD00BD44D2 /* Responses.swift */,
+				27C70CC92A12245C00BD44D2 /* RaunoPipedriveViewModel.swift */,
 			);
 			path = RaunoPipedrive;
 			sourceTree = "<group>";
@@ -257,7 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27C70CA02A12219500BD44D2 /* ContentView.swift in Sources */,
+				27C70CC82A1223AD00BD44D2 /* Responses.swift in Sources */,
+				27C70CCA2A12245C00BD44D2 /* RaunoPipedriveViewModel.swift in Sources */,
+				27C70CA02A12219500BD44D2 /* PersonListView.swift in Sources */,
 				27C70C9E2A12219500BD44D2 /* RaunoPipedriveApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
