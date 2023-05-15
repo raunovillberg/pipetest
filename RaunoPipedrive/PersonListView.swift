@@ -6,13 +6,18 @@ struct PersonListView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                List(viewModel.items) { item in
-                    VStack {
-                        Text(item.name ?? "Unknown name")
-                        Text(item.email ?? "No e-mail")
-                        Text(item.phone ?? "No phone")
-                    }
-                }
+                contactsView
+            }.navigationTitle("Contacts")
+        }
+    }
+
+    @ViewBuilder
+    private var contactsView: some View {
+        List(viewModel.items) { item in
+            NavigationLink {
+                PersonDetailsView()
+            } label: {
+                PersonListRow(item: item)
             }
         }
     }
