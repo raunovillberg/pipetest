@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct PersonRowView: View {
-    var item: PersonListViewModel.Person
+    var item: PersonListViewModel.ListItem
 
     var body: some View {
         VStack {
-            Text(item.name ?? "Unnamed contact")
+            Text(item.name)
                 .font(.title2)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }.frame(alignment: .leading)

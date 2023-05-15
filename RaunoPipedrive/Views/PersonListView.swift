@@ -13,17 +13,25 @@ struct PersonListView: View {
 
     @ViewBuilder
     private var contactsView: some View {
-        if viewModel.items.isEmpty {
-            Text("No contacts found.\nPlease add some in your Pipedrive account!")
-        }
-
-        List(viewModel.items) { item in
-            NavigationLink {
-                PersonDetailsView(personId: item.id)
-                    .frame(alignment: .top)
-            } label: {
-                PersonRowView(item: item)
+        if let items = viewModel.items {
+            if items.isEmpty {
+                Text("No contacts found.\nPlease add some in your Pipedrive account.")
+                if let url = URL(string: "https://www.pipedrive.com") {
+                    Spacer()
+                    Link("Go to Pipedrive", destination: url)
+                }
             }
+
+            List(items) { item in
+                NavigationLink {
+                    PersonDetailsView(personId: item.id)
+                    Spacer()
+                } label: {
+                    PersonRowView(item: item)
+                }
+            }
+        } else {
+            ProgressView()
         }
     }
 }

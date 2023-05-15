@@ -7,12 +7,6 @@ struct AllPersonsResponse: Decodable {
     struct PersonsDataResponse: Decodable {
         let person: PersonResponse
     }
-
-    var persons: [PersonListViewModel.Person] {
-        data.map { response in
-            response.person
-        }
-    }
 }
 
 // https://developers.pipedrive.com/docs/api/v1/Persons#getPerson
@@ -26,6 +20,7 @@ struct PersonResponse: Codable {
     let email: [Email]
     let phone: [Phone]
     let pictureId: Picture?
+    let orgName: String?
 
     struct Email: Codable {
         let label: String?
@@ -52,14 +47,5 @@ struct PersonResponse: Codable {
                 case big = "512"
             }
         }
-    }
-
-    var person: PersonListViewModel.Person {
-        PersonListViewModel.Person(
-            id: id,
-            name: name,
-            email: email.first?.value,
-            phone: phone.first?.value
-        )
     }
 }

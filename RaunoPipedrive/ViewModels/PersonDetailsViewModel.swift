@@ -6,8 +6,9 @@ import SwiftUI
 final class PersonDetailsViewModel: NSObject, ObservableObject {
     struct Details {
         let name: String?
-        let email: String?
-        let phone: String?
+        let organization: String?
+        let email: PersonResponse.Email?
+        let phone: PersonResponse.Phone?
         let pictureUrl: URL?
     }
 
@@ -27,7 +28,6 @@ final class PersonDetailsViewModel: NSObject, ObservableObject {
         let urlString = RaunoPipedriveApp.baseUrlString
         + "persons/\(id)"
         + "?api_token=\(RaunoPipedriveApp.apiToken)"
-        print(urlString)
 
         // One might argue for using a forced unwrap here, because maybe we *do* want to crash
         // in case our URL String is somehow badly malformed here.
@@ -48,8 +48,9 @@ final class PersonDetailsViewModel: NSObject, ObservableObject {
 
                 return Details(
                     name: data.name,
-                    email: data.email.first?.value,
-                    phone: data.phone.first?.value,
+                    organization: data.orgName,
+                    email: data.email.first,
+                    phone: data.phone.first,
                     pictureUrl: URL(string: pictureUrlString ?? "")
                 )
             }

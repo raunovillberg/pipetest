@@ -4,14 +4,12 @@ import SwiftUI
 
 @MainActor
 final class PersonListViewModel: NSObject, ObservableObject {
-    struct Person: Identifiable {
+    struct ListItem: Identifiable {
         let id: Int
-        let name: String?
-        let email: String?
-        let phone: String?
+        let name: String
     }
 
-    @Published public private(set) var items = [Person]()
+    @Published public private(set) var items: [ListItem]?
     private var fetchPersonsTask: AnyCancellable?
 
     override init() {
@@ -24,7 +22,7 @@ final class PersonListViewModel: NSObject, ObservableObject {
         }
     }
 
-    private func fetchPersons() -> AnyPublisher<[Person], Error> {
+    private func fetchPersons() -> AnyPublisher<[ListItem], Error> {
         let urlString = RaunoPipedriveApp.baseUrlString
         + "persons?"
         + "&api_token=\(RaunoPipedriveApp.apiToken)"
@@ -39,7 +37,12 @@ final class PersonListViewModel: NSObject, ObservableObject {
         return URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
             .decode(type: AllPersonsResponse.self, decoder: PipedriveJSONDecoder())
-            .map(\.persons)
+            .map(\.data)
+            .compactMap({ persons in
+                persons.compactMap { person in
+                    ListItem(id: person.id, name: person.name ?? "Anonymous")
+                }
+            })
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
