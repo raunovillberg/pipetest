@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27C70C9E2A12219500BD44D2 /* RaunoPipedriveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70C9D2A12219500BD44D2 /* RaunoPipedriveApp.swift */; };
+		27C70CA02A12219500BD44D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70C9F2A12219500BD44D2 /* ContentView.swift */; };
+		27C70CA22A12219600BD44D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27C70CA12A12219600BD44D2 /* Assets.xcassets */; };
+		27C70CA52A12219600BD44D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27C70CA42A12219600BD44D2 /* Preview Assets.xcassets */; };
+		27C70CAF2A12219600BD44D2 /* RaunoPipedriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CAE2A12219600BD44D2 /* RaunoPipedriveTests.swift */; };
+		27C70CB92A12219600BD44D2 /* RaunoPipedriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CB82A12219600BD44D2 /* RaunoPipedriveUITests.swift */; };
+		27C70CBB2A12219600BD44D2 /* RaunoPipedriveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CBA2A12219600BD44D2 /* RaunoPipedriveUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27C70CAB2A12219600BD44D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27C70C922A12219500BD44D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27C70C992A12219500BD44D2;
+			remoteInfo = RaunoPipedrive;
+		};
+		27C70CB52A12219600BD44D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27C70C922A12219500BD44D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27C70C992A12219500BD44D2;
+			remoteInfo = RaunoPipedrive;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27C70C9A2A12219500BD44D2 /* RaunoPipedrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaunoPipedrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27C70C9D2A12219500BD44D2 /* RaunoPipedriveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaunoPipedriveApp.swift; sourceTree = "<group>"; };
+		27C70C9F2A12219500BD44D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		27C70CA12A12219600BD44D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27C70CA42A12219600BD44D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		27C70CAA2A12219600BD44D2 /* RaunoPipedriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaunoPipedriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27C70CAE2A12219600BD44D2 /* RaunoPipedriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaunoPipedriveTests.swift; sourceTree = "<group>"; };
+		27C70CB42A12219600BD44D2 /* RaunoPipedriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaunoPipedriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27C70CB82A12219600BD44D2 /* RaunoPipedriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaunoPipedriveUITests.swift; sourceTree = "<group>"; };
+		27C70CBA2A12219600BD44D2 /* RaunoPipedriveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaunoPipedriveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27C70C972A12219500BD44D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27C70CA72A12219600BD44D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27C70CB12A12219600BD44D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27C70C912A12219500BD44D2 = {
+			isa = PBXGroup;
+			children = (
+				27C70C9C2A12219500BD44D2 /* RaunoPipedrive */,
+				27C70CAD2A12219600BD44D2 /* RaunoPipedriveTests */,
+				27C70CB72A12219600BD44D2 /* RaunoPipedriveUITests */,
+				27C70C9B2A12219500BD44D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		27C70C9B2A12219500BD44D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27C70C9A2A12219500BD44D2 /* RaunoPipedrive.app */,
+				27C70CAA2A12219600BD44D2 /* RaunoPipedriveTests.xctest */,
+				27C70CB42A12219600BD44D2 /* RaunoPipedriveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27C70C9C2A12219500BD44D2 /* RaunoPipedrive */ = {
+			isa = PBXGroup;
+			children = (
+				27C70C9D2A12219500BD44D2 /* RaunoPipedriveApp.swift */,
+				27C70C9F2A12219500BD44D2 /* ContentView.swift */,
+				27C70CA12A12219600BD44D2 /* Assets.xcassets */,
+				27C70CA32A12219600BD44D2 /* Preview Content */,
+			);
+			path = RaunoPipedrive;
+			sourceTree = "<group>";
+		};
+		27C70CA32A12219600BD44D2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				27C70CA42A12219600BD44D2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		27C70CAD2A12219600BD44D2 /* RaunoPipedriveTests */ = {
+			isa = PBXGroup;
+			children = (
+				27C70CAE2A12219600BD44D2 /* RaunoPipedriveTests.swift */,
+			);
+			path = RaunoPipedriveTests;
+			sourceTree = "<group>";
+		};
+		27C70CB72A12219600BD44D2 /* RaunoPipedriveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				27C70CB82A12219600BD44D2 /* RaunoPipedriveUITests.swift */,
+				27C70CBA2A12219600BD44D2 /* RaunoPipedriveUITestsLaunchTests.swift */,
+			);
+			path = RaunoPipedriveUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27C70C992A12219500BD44D2 /* RaunoPipedrive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27C70CBE2A12219600BD44D2 /* Build configuration list for PBXNativeTarget "RaunoPipedrive" */;
+			buildPhases = (
+				27C70C962A12219500BD44D2 /* Sources */,
+				27C70C972A12219500BD44D2 /* Frameworks */,
+				27C70C982A12219500BD44D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaunoPipedrive;
+			productName = RaunoPipedrive;
+			productReference = 27C70C9A2A12219500BD44D2 /* RaunoPipedrive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		27C70CA92A12219600BD44D2 /* RaunoPipedriveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27C70CC12A12219600BD44D2 /* Build configuration list for PBXNativeTarget "RaunoPipedriveTests" */;
+			buildPhases = (
+				27C70CA62A12219600BD44D2 /* Sources */,
+				27C70CA72A12219600BD44D2 /* Frameworks */,
+				27C70CA82A12219600BD44D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27C70CAC2A12219600BD44D2 /* PBXTargetDependency */,
+			);
+			name = RaunoPipedriveTests;
+			productName = RaunoPipedriveTests;
+			productReference = 27C70CAA2A12219600BD44D2 /* RaunoPipedriveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		27C70CB32A12219600BD44D2 /* RaunoPipedriveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27C70CC42A12219600BD44D2 /* Build configuration list for PBXNativeTarget "RaunoPipedriveUITests" */;
+			buildPhases = (
+				27C70CB02A12219600BD44D2 /* Sources */,
+				27C70CB12A12219600BD44D2 /* Frameworks */,
+				27C70CB22A12219600BD44D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27C70CB62A12219600BD44D2 /* PBXTargetDependency */,
+			);
+			name = RaunoPipedriveUITests;
+			productName = RaunoPipedriveUITests;
+			productReference = 27C70CB42A12219600BD44D2 /* RaunoPipedriveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27C70C922A12219500BD44D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					27C70C992A12219500BD44D2 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					27C70CA92A12219600BD44D2 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 27C70C992A12219500BD44D2;
+					};
+					27C70CB32A12219600BD44D2 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 27C70C992A12219500BD44D2;
+					};
+				};
+			};
+			buildConfigurationList = 27C70C952A12219500BD44D2 /* Build configuration list for PBXProject "RaunoPipedrive" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27C70C912A12219500BD44D2;
+			productRefGroup = 27C70C9B2A12219500BD44D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27C70C992A12219500BD44D2 /* RaunoPipedrive */,
+				27C70CA92A12219600BD44D2 /* RaunoPipedriveTests */,
+				27C70CB32A12219600BD44D2 /* RaunoPipedriveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27C70C982A12219500BD44D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27C70CA52A12219600BD44D2 /* Preview Assets.xcassets in Resources */,
+				27C70CA22A12219600BD44D2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27C70CA82A12219600BD44D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27C70CB22A12219600BD44D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27C70C962A12219500BD44D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27C70CA02A12219500BD44D2 /* ContentView.swift in Sources */,
+				27C70C9E2A12219500BD44D2 /* RaunoPipedriveApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27C70CA62A12219600BD44D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27C70CAF2A12219600BD44D2 /* RaunoPipedriveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27C70CB02A12219600BD44D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27C70CB92A12219600BD44D2 /* RaunoPipedriveUITests.swift in Sources */,
+				27C70CBB2A12219600BD44D2 /* RaunoPipedriveUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27C70CAC2A12219600BD44D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27C70C992A12219500BD44D2 /* RaunoPipedrive */;
+			targetProxy = 27C70CAB2A12219600BD44D2 /* PBXContainerItemProxy */;
+		};
+		27C70CB62A12219600BD44D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27C70C992A12219500BD44D2 /* RaunoPipedrive */;
+			targetProxy = 27C70CB52A12219600BD44D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		27C70CBC2A12219600BD44D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		27C70CBD2A12219600BD44D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27C70CBF2A12219600BD44D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RaunoPipedrive/Preview Content\"";
+				DEVELOPMENT_TEAM = PN6VA76L7R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MountWool.RaunoPipedrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27C70CC02A12219600BD44D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RaunoPipedrive/Preview Content\"";
+				DEVELOPMENT_TEAM = PN6VA76L7R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MountWool.RaunoPipedrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		27C70CC22A12219600BD44D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PN6VA76L7R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MountWool.RaunoPipedriveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaunoPipedrive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RaunoPipedrive";
+			};
+			name = Debug;
+		};
+		27C70CC32A12219600BD44D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PN6VA76L7R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MountWool.RaunoPipedriveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaunoPipedrive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RaunoPipedrive";
+			};
+			name = Release;
+		};
+		27C70CC52A12219600BD44D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PN6VA76L7R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MountWool.RaunoPipedriveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RaunoPipedrive;
+			};
+			name = Debug;
+		};
+		27C70CC62A12219600BD44D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PN6VA76L7R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MountWool.RaunoPipedriveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RaunoPipedrive;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27C70C952A12219500BD44D2 /* Build configuration list for PBXProject "RaunoPipedrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27C70CBC2A12219600BD44D2 /* Debug */,
+				27C70CBD2A12219600BD44D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27C70CBE2A12219600BD44D2 /* Build configuration list for PBXNativeTarget "RaunoPipedrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27C70CBF2A12219600BD44D2 /* Debug */,
+				27C70CC02A12219600BD44D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27C70CC12A12219600BD44D2 /* Build configuration list for PBXNativeTarget "RaunoPipedriveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27C70CC22A12219600BD44D2 /* Debug */,
+				27C70CC32A12219600BD44D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27C70CC42A12219600BD44D2 /* Build configuration list for PBXNativeTarget "RaunoPipedriveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27C70CC52A12219600BD44D2 /* Debug */,
+				27C70CC62A12219600BD44D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27C70C922A12219500BD44D2 /* Project object */;
+}
