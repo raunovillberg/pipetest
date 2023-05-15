@@ -1,7 +1,6 @@
 import Foundation
 
 // https://developers.pipedrive.com/docs/api/v1/Persons#getPersons
-// Unused fields have been omitted
 struct AllPersonsResponse: Decodable {
     let data: [PersonResponse]
 
@@ -17,26 +16,16 @@ struct AllPersonsResponse: Decodable {
 }
 
 // https://developers.pipedrive.com/docs/api/v1/Persons#getPerson
-// Unused fields have been omitted
-struct PersonDetailsResponse: Decodable {
-    private let data: PersonResponse
-
-    var person: PersonListViewModel.Person? {
-        data.person
-    }
+struct GetPersonDetailsResponse: Decodable {
+    let data: PersonResponse
 }
 
-struct PersonResponse: Codable, Identifiable {
-    let id = UUID()
-    let personId: Int
+struct PersonResponse: Codable {
+    let id: Int
     let name: String?
     let email: [Email]
     let phone: [Phone]
-
-    private enum CodingKeys: String, CodingKey {
-        case personId = "id"
-        case name, email, phone
-    }
+    let pictureId: Picture?
 
     struct Email: Codable {
         let label: String?
@@ -50,9 +39,24 @@ struct PersonResponse: Codable, Identifiable {
         let primary: Bool
     }
 
+    struct Picture: Codable {
+        let pictures: PictureUrls?
+        let value: Int
+
+        struct PictureUrls: Codable {
+            let small: String?
+            let big: String?
+
+            private enum CodingKeys: String, CodingKey {
+                case small = "128"
+                case big = "512"
+            }
+        }
+    }
+
     var person: PersonListViewModel.Person {
         PersonListViewModel.Person(
-            id: personId,
+            id: id,
             name: name,
             email: email.first?.value,
             phone: phone.first?.value

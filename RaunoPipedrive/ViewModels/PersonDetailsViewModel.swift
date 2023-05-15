@@ -4,12 +4,14 @@ import SwiftUI
 
 @MainActor
 final class PersonDetailsViewModel: NSObject, ObservableObject {
-    typealias Person = PersonListViewModel.Person
+    struct Details {
+        let name: String?
+        let email: String?
+        let phone: String?
+        let pictureUrl: URL?
+    }
 
-    @Published public private(set) var details: Person?
-
-    private let baseUrlString = "https://api.pipedrive.com/v1/"
-    private let apiToken = "PLACE YOUR TOKEN HERE"
+    @Published public private(set) var details: Details?
 
     private var fetchPersonDetailsTask: AnyCancellable?
 
@@ -21,10 +23,10 @@ final class PersonDetailsViewModel: NSObject, ObservableObject {
         }
     }
 
-    private func fetchPersonDetails(id: Int) -> AnyPublisher<Person, Error> {
-        let urlString = baseUrlString
+    private func fetchPersonDetails(id: Int) -> AnyPublisher<Details, Error> {
+        let urlString = RaunoPipedriveApp.baseUrlString
         + "persons/\(id)"
-        + "?api_token=\(apiToken)"
+        + "?api_token=\(RaunoPipedriveApp.apiToken)"
         print(urlString)
 
         // One might argue for using a forced unwrap here, because maybe we *do* want to crash
@@ -36,8 +38,21 @@ final class PersonDetailsViewModel: NSObject, ObservableObject {
 
         return URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
-            .decode(type: PersonDetailsResponse.self, decoder: JSONDecoder())
-            .compactMap(\.person)
+            .decode(type: GetPersonDetailsResponse.self, decoder: PipedriveJSONDecoder())
+            .map(\.data)
+            .compactMap { data in
+                let pictureUrlString: String? = {
+                    guard let pictures = data.pictureId?.pictures else { return nil }
+                    return pictures.small ?? pictures.big
+                }()
+
+                return Details(
+                    name: data.name,
+                    email: data.email.first?.value,
+                    phone: data.phone.first?.value,
+                    pictureUrl: URL(string: pictureUrlString ?? "")
+                )
+            }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
