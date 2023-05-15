@@ -13,11 +13,15 @@ struct PersonListView: View {
 
     @ViewBuilder
     private var contactsView: some View {
+        if viewModel.items.isEmpty {
+            Text("Please add a Contact!")
+        }
+
         List(viewModel.items) { item in
             NavigationLink {
-                PersonDetailsView()
+                PersonDetailsView(id: item.id)
             } label: {
-                PersonListRow(item: item)
+                PersonRowView(item: item)
             }
         }
     }

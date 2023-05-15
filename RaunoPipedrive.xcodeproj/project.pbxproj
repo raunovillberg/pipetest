@@ -14,11 +14,11 @@
 		27C70CAF2A12219600BD44D2 /* RaunoPipedriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CAE2A12219600BD44D2 /* RaunoPipedriveTests.swift */; };
 		27C70CB92A12219600BD44D2 /* RaunoPipedriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CB82A12219600BD44D2 /* RaunoPipedriveUITests.swift */; };
 		27C70CBB2A12219600BD44D2 /* RaunoPipedriveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CBA2A12219600BD44D2 /* RaunoPipedriveUITestsLaunchTests.swift */; };
-		27C70CCA2A12245C00BD44D2 /* RaunoPipedriveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CC92A12245C00BD44D2 /* RaunoPipedriveViewModel.swift */; };
+		27C70CCA2A12245C00BD44D2 /* PersonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CC92A12245C00BD44D2 /* PersonListViewModel.swift */; };
 		27C70CCD2A123AAD00BD44D2 /* PersonsResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CCC2A123AAD00BD44D2 /* PersonsResponses.swift */; };
-		27C70CCF2A123AC200BD44D2 /* PersonDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CCE2A123AC200BD44D2 /* PersonDetailsResponse.swift */; };
-		27C70CD22A124A6B00BD44D2 /* PersonListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CD12A124A6B00BD44D2 /* PersonListRow.swift */; };
+		27C70CD22A124A6B00BD44D2 /* PersonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CD12A124A6B00BD44D2 /* PersonRowView.swift */; };
 		27C70CD42A124AD300BD44D2 /* PersonDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CD32A124AD300BD44D2 /* PersonDetailsView.swift */; };
+		27C70CD72A124D5500BD44D2 /* PersonDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C70CD62A124D5500BD44D2 /* PersonDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +49,11 @@
 		27C70CB42A12219600BD44D2 /* RaunoPipedriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaunoPipedriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C70CB82A12219600BD44D2 /* RaunoPipedriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaunoPipedriveUITests.swift; sourceTree = "<group>"; };
 		27C70CBA2A12219600BD44D2 /* RaunoPipedriveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaunoPipedriveUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		27C70CC92A12245C00BD44D2 /* RaunoPipedriveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaunoPipedriveViewModel.swift; sourceTree = "<group>"; };
+		27C70CC92A12245C00BD44D2 /* PersonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewModel.swift; sourceTree = "<group>"; };
 		27C70CCC2A123AAD00BD44D2 /* PersonsResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsResponses.swift; sourceTree = "<group>"; };
-		27C70CCE2A123AC200BD44D2 /* PersonDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsResponse.swift; sourceTree = "<group>"; };
-		27C70CD12A124A6B00BD44D2 /* PersonListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListRow.swift; sourceTree = "<group>"; };
+		27C70CD12A124A6B00BD44D2 /* PersonRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRowView.swift; sourceTree = "<group>"; };
 		27C70CD32A124AD300BD44D2 /* PersonDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsView.swift; sourceTree = "<group>"; };
+		27C70CD62A124D5500BD44D2 /* PersonDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,13 +104,12 @@
 		27C70C9C2A12219500BD44D2 /* RaunoPipedrive */ = {
 			isa = PBXGroup;
 			children = (
+				27C70CD52A124D4A00BD44D2 /* ViewModels */,
 				27C70CD02A124A5C00BD44D2 /* Views */,
 				27C70CCB2A123AA000BD44D2 /* Responses */,
 				27C70C9D2A12219500BD44D2 /* RaunoPipedriveApp.swift */,
-				27C70C9F2A12219500BD44D2 /* PersonListView.swift */,
 				27C70CA12A12219600BD44D2 /* Assets.xcassets */,
 				27C70CA32A12219600BD44D2 /* Preview Content */,
-				27C70CC92A12245C00BD44D2 /* RaunoPipedriveViewModel.swift */,
 			);
 			path = RaunoPipedrive;
 			sourceTree = "<group>";
@@ -144,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				27C70CCC2A123AAD00BD44D2 /* PersonsResponses.swift */,
-				27C70CCE2A123AC200BD44D2 /* PersonDetailsResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -152,10 +150,20 @@
 		27C70CD02A124A5C00BD44D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				27C70CD12A124A6B00BD44D2 /* PersonListRow.swift */,
+				27C70C9F2A12219500BD44D2 /* PersonListView.swift */,
+				27C70CD12A124A6B00BD44D2 /* PersonRowView.swift */,
 				27C70CD32A124AD300BD44D2 /* PersonDetailsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		27C70CD52A124D4A00BD44D2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				27C70CC92A12245C00BD44D2 /* PersonListViewModel.swift */,
+				27C70CD62A124D5500BD44D2 /* PersonDetailsViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,13 +296,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27C70CCA2A12245C00BD44D2 /* RaunoPipedriveViewModel.swift in Sources */,
-				27C70CCF2A123AC200BD44D2 /* PersonDetailsResponse.swift in Sources */,
+				27C70CD72A124D5500BD44D2 /* PersonDetailsViewModel.swift in Sources */,
+				27C70CCA2A12245C00BD44D2 /* PersonListViewModel.swift in Sources */,
 				27C70CA02A12219500BD44D2 /* PersonListView.swift in Sources */,
 				27C70CD42A124AD300BD44D2 /* PersonDetailsView.swift in Sources */,
 				27C70CCD2A123AAD00BD44D2 /* PersonsResponses.swift in Sources */,
 				27C70C9E2A12219500BD44D2 /* RaunoPipedriveApp.swift in Sources */,
-				27C70CD22A124A6B00BD44D2 /* PersonListRow.swift in Sources */,
+				27C70CD22A124A6B00BD44D2 /* PersonRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,10 +19,10 @@ struct AllPersonsResponse: Decodable {
 // https://developers.pipedrive.com/docs/api/v1/Persons#getPerson
 // Unused fields have been omitted
 struct PersonDetailsResponse: Decodable {
-    private let data: [PersonResponse]
+    private let data: PersonResponse
 
     var person: PersonListViewModel.Person? {
-        data.first.map(\.person)
+        data.person
     }
 }
 
