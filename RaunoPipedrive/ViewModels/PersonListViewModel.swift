@@ -1,25 +1,49 @@
 import Foundation
 import Combine
 import SwiftUI
+import Network
 
 @MainActor
 final class PersonListViewModel: NSObject, ObservableObject {
-    struct ListItem: Identifiable {
+    struct ListItem: Identifiable, Codable {
         let id: Int
         let name: String
+    }
+
+    // Wrapper object to easily save an array
+    struct CachedListItems: Codable {
+        let items: [ListItem]
     }
 
     @Published public private(set) var items: [ListItem]?
     private var fetchPersonsTask: AnyCancellable?
 
+    private let networkMonitor = NWPathMonitor()
+
     override init() {
         super.init()
 
-        fetchPersonsTask = fetchPersons().sink {
-            print ("completion: \($0)")
-        } receiveValue: {
-            self.items = $0
+        networkMonitor.pathUpdateHandler = { [weak self] path in
+            if path.status == .satisfied {
+                guard let self = self else { return }
+                self.items = nil
+
+                self.fetchPersonsTask = self.fetchPersons().sink {
+                    print ("completion: \($0)")
+                } receiveValue: {
+                    self.items = $0
+                    self.saveToFile($0)
+                }
+            } else if path.status == .unsatisfied {
+                DispatchQueue.main.async {
+                    guard let self = self else { return }
+                    self.items = self.loadFromCache()
+                }
+            }
         }
+
+        let queue = DispatchQueue(label: "Monitor")
+        networkMonitor.start(queue: queue)
     }
 
     private func fetchPersons() -> AnyPublisher<[ListItem], Error> {
@@ -45,5 +69,36 @@ final class PersonListViewModel: NSObject, ObservableObject {
             })
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
+    }
+
+    private func saveToFile(_ listItems: [ListItem]) {
+        guard let cachedFilePath = cachedFilePath else { return }
+        if let encoded = try? JSONEncoder().encode(CachedListItems(items: listItems)) {
+            do {
+                try encoded.write(to: cachedFilePath)
+            } catch let error {
+                print(error)
+            }
+        }
+    }
+
+    private func loadFromCache() -> [ListItem] {
+        guard let cachedFilePath = cachedFilePath else { return [] }
+        do {
+            let data = try Data(contentsOf: cachedFilePath)
+            let cache = try JSONDecoder().decode(CachedListItems.self, from: data)
+            return cache.items
+        } catch let error {
+            print(error)
+        }
+
+        return []
+    }
+
+    private var cachedFilePath: URL? {
+        FileManager.default
+            .urls(for: .documentDirectory, in: .userDomainMask)
+            .first?
+            .appendingPathComponent("cachedPipedriveContacts.json")
     }
 }
