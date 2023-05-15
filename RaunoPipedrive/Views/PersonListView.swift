@@ -30,6 +30,12 @@ struct PersonListView: View {
                     PersonRowView(item: item)
                 }
             }
+            if viewModel.connectedToInternet == false {
+                Text("No Internet connectivity\nDisplaying cached contacts\nMay not be up-to-date!")
+                    .multilineTextAlignment(.center)
+                    .font(.title3)
+                    .padding()
+            }
         } else {
             ProgressView()
         }

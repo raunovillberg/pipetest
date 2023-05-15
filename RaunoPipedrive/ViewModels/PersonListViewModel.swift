@@ -16,6 +16,8 @@ final class PersonListViewModel: NSObject, ObservableObject {
     }
 
     @Published public private(set) var items: [ListItem]?
+    // Assuming network availability by default
+    @Published public private(set) var connectedToInternet = true
     private var fetchPersonsTask: AnyCancellable?
 
     private let networkMonitor = NWPathMonitor()
@@ -27,6 +29,7 @@ final class PersonListViewModel: NSObject, ObservableObject {
             if path.status == .satisfied {
                 guard let self = self else { return }
                 self.items = nil
+                self.connectedToInternet = true
 
                 self.fetchPersonsTask = self.fetchPersons().sink {
                     print ("completion: \($0)")
@@ -38,6 +41,7 @@ final class PersonListViewModel: NSObject, ObservableObject {
                 DispatchQueue.main.async {
                     guard let self = self else { return }
                     self.items = self.loadFromCache()
+                    self.connectedToInternet = false
                 }
             }
         }
