@@ -13,6 +13,9 @@ struct PersonListView: View {
 
     @ViewBuilder
     private var contactsView: some View {
+        if let error = viewModel.error {
+            Text("Error: \(error)")
+        }
         if let items = viewModel.items {
             if items.isEmpty {
                 Text("No contacts found.\nPlease add some in your Pipedrive account.")

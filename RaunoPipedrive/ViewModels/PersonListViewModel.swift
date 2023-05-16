@@ -17,6 +17,7 @@ final class PersonListViewModel: NSObject, ObservableObject {
 
     @Published public private(set) var items: [ListItem]?
     @Published public private(set) var usingCachedData = false
+    @Published public private(set) var error: String?
     private var fetchPersonsTask: AnyCancellable?
 
     private let networkMonitor = NWPathMonitor()
@@ -31,8 +32,13 @@ final class PersonListViewModel: NSObject, ObservableObject {
                     self.items = nil
                     self.usingCachedData = false
 
-                    self.fetchPersonsTask = self.fetchPersons().sink {
-                        print ("completion: \($0)")
+                    self.fetchPersonsTask = self.fetchPersons().sink { result in
+                        switch result {
+                        case .failure(let error):
+                            self.error = error.localizedDescription
+                        default:
+                            self.error = nil
+                        }
                     } receiveValue: {
                         self.items = $0
                         self.saveToFile($0)
