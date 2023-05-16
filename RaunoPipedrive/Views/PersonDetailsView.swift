@@ -66,10 +66,12 @@ struct PersonDetailsView: View {
     }
 
     @ViewBuilder private func organizationView(for person: Person) -> some View {
-        Text("Organization: \(person.organization)")
-            .font(.title2)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .textSelection(.enabled)
+        if let org = person.organization {
+            Text("Organization: \(org)")
+                .font(.title2)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .textSelection(.enabled)
+        }
     }
 
     @ViewBuilder private func emailView(

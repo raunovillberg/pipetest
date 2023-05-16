@@ -6,7 +6,7 @@ import SwiftUI
 final class PersonDetailsViewModel: NSObject, ObservableObject {
     struct Details {
         let name: String
-        let organization: String
+        let organization: String?
         let email: [Email]
         let phone: [Phone]
         let pictureUrl: URL?
@@ -60,7 +60,7 @@ final class PersonDetailsViewModel: NSObject, ObservableObject {
 
                 return Details(
                     name: data.name.fallbackIfEmptyOrWhitespace(to: "Anonymous"),
-                    organization: data.orgName.fallbackIfEmptyOrWhitespace(to: "[unknown]"),
+                    organization: data.orgName,
                     email: data.email.compactMap({ email in
                         guard let address = email.value,
                               address.isNotEmptyOrWhitespace else {
