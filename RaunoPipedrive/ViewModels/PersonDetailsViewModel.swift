@@ -5,11 +5,23 @@ import SwiftUI
 @MainActor
 final class PersonDetailsViewModel: NSObject, ObservableObject {
     struct Details {
-        let name: String?
-        let organization: String?
-        let email: PersonResponse.Email?
-        let phone: PersonResponse.Phone?
+        let name: String
+        let organization: String
+        let email: [Email]
+        let phone: [Phone]
         let pictureUrl: URL?
+
+        struct Email: Identifiable {
+            let id = UUID()
+            let address: String
+            let label: String
+        }
+
+        struct Phone: Identifiable {
+            let id = UUID()
+            let number: String
+            let label: String
+        }
     }
 
     @Published public private(set) var details: Details?
@@ -47,10 +59,37 @@ final class PersonDetailsViewModel: NSObject, ObservableObject {
                 }()
 
                 return Details(
-                    name: data.name,
-                    organization: data.orgName,
-                    email: data.email.first,
-                    phone: data.phone.first,
+                    name: data.name.fallbackIfEmptyOrWhitespace(to: "Anonymous"),
+                    organization: data.orgName.fallbackIfEmptyOrWhitespace(to: "[unknown]"),
+                    email: data.email.compactMap({ email in
+                        guard let address = email.value,
+                              address.isNotEmptyOrWhitespace else {
+                            return nil
+                        }
+                        var label = email.label.fallbackIfEmptyOrWhitespace(to: "unlabeled")
+                        if email.primary {
+                            // Maybe only add this label if we have more than one value?
+                            label.append(" (primary)")
+                        }
+                        return Details.Email(
+                            address: address,
+                            label: label
+                        )
+                    }),
+                    phone: data.phone.compactMap({ phone in
+                        guard let number = phone.value,
+                              number.isNotEmptyOrWhitespace else {
+                            return nil
+                        }
+                        var label = phone.label.fallbackIfEmptyOrWhitespace(to: "unlabeled")
+                        if phone.primary {
+                            label.append(" (primary)")
+                        }
+                        return Details.Phone(
+                            number: number,
+                            label: label
+                        )
+                    }),
                     pictureUrl: URL(string: pictureUrlString ?? "")
                 )
             }

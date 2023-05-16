@@ -22,8 +22,18 @@ struct PersonDetailsView: View {
             pictureView(for: person)
             nameView(for: person)
             organizationView(for: person)
-            emailView(for: person)
-            phoneView(for: person)
+            ForEach(person.email) { email in
+                emailView(
+                    address: email.address,
+                    label: email.label
+                )
+            }
+            ForEach(person.phone) { phone in
+                phoneView(
+                    number: phone.number,
+                    label: phone.label
+                )
+            }
         }.padding()
     }
 
@@ -39,59 +49,46 @@ struct PersonDetailsView: View {
                 ProgressView()
                     .frame(width: imageSideSize, height: imageSideSize)
             }
+        } else {
+            Image(systemName: "person.crop.square.fill")
+                .resizable()
+                .frame(width: imageSideSize, height: imageSideSize)
+                .cornerRadius(8)
         }
     }
 
     @ViewBuilder private func nameView(for person: Person) -> some View {
-        if let name = person.name, name.count > 0 {
-            Text(name)
-                .font(.largeTitle)
-                .navigationTitle(name)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .textSelection(.enabled)
-        }
+        Text(person.name)
+            .font(.largeTitle)
+            .navigationTitle(person.name)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .textSelection(.enabled)
     }
 
     @ViewBuilder private func organizationView(for person: Person) -> some View {
-        if let org = person.organization, org.count > 0 {
-            Text("Organization: \(org)")
-                .font(.title2)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .textSelection(.enabled)
-        }
+        Text("Organization: \(person.organization)")
+            .font(.title2)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .textSelection(.enabled)
     }
 
-    @ViewBuilder private func emailView(for person: Person) -> some View {
-        if let email = person.email?.value,
-           email.count > 0,
-           let url = URL(string: "mailto:\(email)") {
-            let displayString: String = {
-                let base = "E-mail: \(email)"
-                if let label = person.email?.label, label.count > 0 {
-                    return "\(base) (\(label))"
-                }
-                return base
-            }()
-
-            Link(displayString, destination: url)
+    @ViewBuilder private func emailView(
+        address: String,
+        label: String
+    ) -> some View {
+        if let url = URL(string: "mailto:\(address)") {
+            Link("\(address) - \(label)", destination: url)
                 .font(.title2)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 
-    @ViewBuilder private func phoneView(for person: Person) -> some View {
-        if let phone = person.phone?.value,
-           phone.count > 0,
-           let url = URL(string: "tel:\(phone)") {
-            let displayString: String = {
-                let base = "Phone: \(phone)"
-                if let label = person.phone?.label, label.count > 0 {
-                    return "\(base) (\(label))"
-                }
-                return base
-            }()
-
-            Link(displayString, destination: url)
+    @ViewBuilder private func phoneView(
+        number: String,
+        label: String
+    ) -> some View {
+        if let url = URL(string: "tel:\(number)") {
+            Link("\(number) - \(label)", destination: url)
                 .font(.title2)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
