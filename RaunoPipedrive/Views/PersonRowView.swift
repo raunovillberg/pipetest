@@ -11,3 +11,9 @@ struct PersonRowView: View {
         }.frame(alignment: .leading)
     }
 }
+
+struct PersonRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        PersonRowView(item: PersonListViewModel.ListItem(id: 0, name: "Nimi"))
+    }
+}
