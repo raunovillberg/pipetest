@@ -27,15 +27,17 @@ final class PersonListViewModel: NSObject, ObservableObject {
 
         networkMonitor.pathUpdateHandler = { [weak self] path in
             if path.status == .satisfied {
-                guard let self = self else { return }
-                self.items = nil
-                self.connectedToInternet = true
+                DispatchQueue.main.async {
+                    guard let self = self else { return }
+                    self.items = nil
+                    self.connectedToInternet = true
 
-                self.fetchPersonsTask = self.fetchPersons().sink {
-                    print ("completion: \($0)")
-                } receiveValue: {
-                    self.items = $0
-                    self.saveToFile($0)
+                    self.fetchPersonsTask = self.fetchPersons().sink {
+                        print ("completion: \($0)")
+                    } receiveValue: {
+                        self.items = $0
+                        self.saveToFile($0)
+                    }
                 }
             } else if path.status == .unsatisfied {
                 DispatchQueue.main.async {
