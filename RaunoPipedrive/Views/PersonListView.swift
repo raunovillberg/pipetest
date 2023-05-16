@@ -28,10 +28,10 @@ struct PersonListView: View {
                     Spacer()
                 } label: {
                     PersonRowView(item: item)
-                }
+                }.disabled(viewModel.usingCachedData)
             }
-            if viewModel.connectedToInternet == false {
-                Text("No Internet connectivity\nDisplaying cached contacts\nMay not be up-to-date!")
+            if viewModel.usingCachedData {
+                Text("No Internet connectivity.\nDisplaying cached list of contacts.\nMay not be up-to-date.")
                     .multilineTextAlignment(.center)
                     .font(.title3)
                     .padding()

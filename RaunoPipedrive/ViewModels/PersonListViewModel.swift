@@ -16,8 +16,7 @@ final class PersonListViewModel: NSObject, ObservableObject {
     }
 
     @Published public private(set) var items: [ListItem]?
-    // Assuming network availability by default
-    @Published public private(set) var connectedToInternet = true
+    @Published public private(set) var usingCachedData = false
     private var fetchPersonsTask: AnyCancellable?
 
     private let networkMonitor = NWPathMonitor()
@@ -30,7 +29,7 @@ final class PersonListViewModel: NSObject, ObservableObject {
                 DispatchQueue.main.async {
                     guard let self = self else { return }
                     self.items = nil
-                    self.connectedToInternet = true
+                    self.usingCachedData = false
 
                     self.fetchPersonsTask = self.fetchPersons().sink {
                         print ("completion: \($0)")
@@ -43,7 +42,7 @@ final class PersonListViewModel: NSObject, ObservableObject {
                 DispatchQueue.main.async {
                     guard let self = self else { return }
                     self.items = self.loadFromCache()
-                    self.connectedToInternet = false
+                    self.usingCachedData = true
                 }
             }
         }
@@ -83,6 +82,7 @@ final class PersonListViewModel: NSObject, ObservableObject {
             do {
                 try encoded.write(to: cachedFilePath)
             } catch let error {
+                // TODO: Actually handle errors here.
                 print(error)
             }
         }
@@ -95,6 +95,7 @@ final class PersonListViewModel: NSObject, ObservableObject {
             let cache = try JSONDecoder().decode(CachedListItems.self, from: data)
             return cache.items
         } catch let error {
+            // TODO: Actually handle errors here.
             print(error)
         }
 
