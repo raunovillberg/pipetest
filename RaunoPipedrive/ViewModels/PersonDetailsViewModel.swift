@@ -25,12 +25,18 @@ final class PersonDetailsViewModel: NSObject, ObservableObject {
     }
 
     @Published public private(set) var details: Details?
+    @Published public private(set) var error: String?
 
     private var fetchPersonDetailsTask: AnyCancellable?
 
     func onViewAppeared(id: Int) {
-        fetchPersonDetailsTask = fetchPersonDetails(id: id).sink {
-            print ("completion: \($0)")
+        fetchPersonDetailsTask = fetchPersonDetails(id: id).sink { result in
+            switch result {
+            case .failure(let error):
+                self.error = error.localizedDescription
+            default:
+                self.error = nil
+            }
         } receiveValue: {
             self.details = $0
         }

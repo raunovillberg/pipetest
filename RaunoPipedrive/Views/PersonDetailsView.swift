@@ -7,7 +7,10 @@ struct PersonDetailsView: View {
     let personId: Int
 
     var body: some View {
-        if let person = viewModel.details {
+        if let error = viewModel.error {
+            Text("Error: \(error)")
+        }
+        else if let person = viewModel.details {
             detailsView(for: person)
         } else {
             ProgressView()
